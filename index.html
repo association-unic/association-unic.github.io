@@ -6,7 +6,7 @@ layout: default
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<img class="img-responsive img-circle" src="{{base}}/assets/img/bouletmaton.png" alt="">
+				<img id="img-accueil" class="img-responsive img-rounded" src="{{base}}/assets/img/momo.png" alt="Ahmad">
 				<div class="intro-text">
 					<span class="name">Ensemble tout devient possible</span>
 					<hr class="star-light">
@@ -64,46 +64,24 @@ layout: default
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="{{base}}/activites/jardin.html" class="portfolio-link animsition-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cabin.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Jardin des loisirs</h4>
-					<p class="text-muted">espace parents et enfants</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cake.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Espace convivial</h4>
-					<p class="text-muted">femmes et jeunes</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/game.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Aide administrative</h4>
-					<p class="text-muted">pour les procédures difficiles</p>
-				</div>
-			</div>
 
+			{% for post in site.categories.activites %}
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="{{post.url}}" class="portfolio-link animsition-link">
+						<!-- <div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+							</div>
+						</div> -->
+						{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}thumb/default_thumb.png{% endif %}{% endcapture %}
+						<img src="{{base}}/assets/img/{{imgurl}}" class="img-responsive" alt="{{post.title}}">
+					</a>
+					<div class="portfolio-caption">
+						<h4>{{post.title}}</h4>
+						<p class="text-muted">{{post.subtitle}}</p>
+					</div>
+				</div>
+			{% endfor %}
+			
 		</div>
 	</div>
 </section>
@@ -116,55 +94,19 @@ layout: default
 				<h3 class="section-subheading text-muted">à Nîmes et ailleurs</h3>
 			</div>
 		</div>
+
 		<div class="row">
+			{% for post in site.categories.sorties %}
 			<div class="col-sm-4 portfolio-item">
-				<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/cabin.png" class="img-responsive" alt="">
+				<a href="{{post.url}}" class="portfolio-link">
+					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}'thumb/default_thumb.png'{% endif %}{% endcapture %}
+					<img src="{{base}}/assets/img/{{imgurl}}" class="img-responsive" alt="{{post.title}}">
 				</a>
 				<div class="portfolio-caption">
-					<h4>à Marseille</h4>
+					<h4>{{post.title}}</h4>
 				</div>
 			</div>
-			<div class="col-sm-4 portfolio-item">
-				<a href="{{base}}/sorties/patinoire.html" class="portfolio-link animsition-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/cake.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Patinoire</h4>
-				</div>
-			</div>
-			<div class="col-sm-4 portfolio-item">
-				<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/circus.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Accro’branche</h4>
-				</div>
-			</div>
-			<div class="col-sm-4 portfolio-item">
-				<a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/game.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Rivière</h4>
-				</div>
-			</div>
-			<div class="col-sm-4 portfolio-item">
-				<a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/safe.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Jouets</h4>
-				</div>
-			</div>
-			<div class="col-sm-4 portfolio-item">
-				<a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-					<img src="{{base}}/assets/img/portfolio/submarine.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Jouets</h4>
-				</div>
-			</div>
+			{% endfor %}
 
 		</div>
 	</div>
@@ -272,54 +214,6 @@ layout: default
 			</div>
 			<div class="col-lg-4">
 				<p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>Nous contacter</h2>
-				<hr class="star-primary">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-				<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-				<form name="sentMessage" id="contactForm" novalidate>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Nom</label>
-							<input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Entrez votre nom.">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Addresse Email</label>
-							<input type="email" class="form-control" placeholder="Addresse Email" id="email" required data-validation-required-message="Entrez votre addresse email.">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label>Message</label>
-							<textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Entrez un message."></textarea>
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<br>
-					<div id="success"></div>
-					<div class="row">
-						<div class="form-group col-xs-12">
-							<button type="submit" class="btn btn-success btn-lg">Envoyer</button>
-						</div>
-					</div>
-				</form>
 			</div>
 		</div>
 	</div>

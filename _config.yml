@@ -20,22 +20,26 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 
-# ajoutes par moi
 timezone: Europe/Paris
 
 defaults:
   -
     scope:
-      path: "activites"
-      # type: "pages" 
+      path: ""
+      type: "posts" 
     values:
-      layout: "page" # overrides default layout
-      genre: "page"
+      is_post: true
+      permalink: /:categories/:title
+      layout: "post" # overrides default layout
 
   -
     scope:
-      path: "sorties"
-      # type: "pages"
+      path: "_posts/sorties"
     values:
-      layout: "page" # overrides default layout
-      genre: "page"
+      category: "sorties"
+
+  -
+    scope:
+      path: "_posts/activites"
+    values:
+      category: "activites"
