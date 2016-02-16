@@ -5,7 +5,7 @@
 	<meta name="description" content="lieu accueil">
 	<meta name="author" content="association unic">
 
-	<title>{% if page.title %}{{ page.title | append:site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
 
 	<link href="{{base}}/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{base}}/assets/css/freelancer.css" rel="stylesheet">

@@ -27,7 +27,15 @@ defaults:
   -
     scope:
       path: "activites"
-      type: "pages" # previously `page` in Jekyll 2.2.
+      # type: "pages" 
     values:
-      layout: "page" # overrides previous default layout
+      layout: "page" # overrides default layout
+      genre: "page"
+
+  -
+    scope:
+      path: "sorties"
+      # type: "pages"
+    values:
+      layout: "page" # overrides default layout
       genre: "page"
