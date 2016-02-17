@@ -99,7 +99,7 @@ layout: default
 			{% for post in site.categories.sorties %}
 			<div class="col-sm-4 portfolio-item">
 				<a href="{{post.url}}" class="portfolio-link">
-					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}'thumb/default_thumb.png'{% endif %}{% endcapture %}
+					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}thumb/default_thumb.png{% endif %}{% endcapture %}
 					<img src="{{base}}/assets/img/{{imgurl}}" class="img-responsive" alt="{{post.title}}">
 				</a>
 				<div class="portfolio-caption">
@@ -107,8 +107,8 @@ layout: default
 				</div>
 			</div>
 			{% endfor %}
-
 		</div>
+
 	</div>
 </section>
 
@@ -120,81 +120,21 @@ layout: default
 				<h3 class="section-subheading text-muted">et coopérations ou vous pouvez nous retrouver</h3>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cabin.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Journées de la femme</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cake.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Bienvenue chez vous</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/game.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Fête des voisins</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cabin.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Fêtes des enfants</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/cake.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Déjeuner Partenariat</h4>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-						</div>
-					</div>
-					<img src="{{base}}/assets/img/portfolio/game.png" class="img-responsive" alt="">
-				</a>
-				<div class="portfolio-caption">
-					<h4>Ciné-Parents</h4>
-				</div>
-			</div>
 
+		<div class="row">
+			{% for post in site.categories.evenements %}
+			<div class="col-md-4 col-sm-6 portfolio-item">
+				<a href="{{post.url}}" class="portfolio-link">
+					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}thumb/default_thumb.png{% endif %}{% endcapture %}
+					<img src="{{base}}/assets/img/{{imgurl}}" class="img-responsive" alt="{{post.title}}">
+				</a>
+				<div class="portfolio-caption">
+					<h4>{{post.title}}</h4>
+				</div>
+			</div>
+			{% endfor %}
 		</div>
+
 	</div>
 </section>
 

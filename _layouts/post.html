@@ -3,17 +3,25 @@ layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
-	{% capture imgurl %}{{base}}/assets/img/{{page.imgtitle}}{% endcapture %}
+	
 
-	{% for img in site.static_files %}
-		{% if img.path contains imgurl %}
-			{% assign file_exists = true %}
-		{% endif %}
-	{% endfor %}
+	{% if page.imgtitle %}
+		{% capture imgurl %}{{base}}/assets/img/{{page.imgtitle}}{% endcapture %}
+
+		{% for img in site.static_files %}
+			{% if img.path contains imgurl %}
+				{% assign file_exists = true %}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		{% assign file_exists = false %}
+	{% endif %}
 
 	{% unless file_exists %}
 		{% assign imgurl = {{base}}|append:'/assets/img/default-imgtitle.jpg' %}
 	{% endunless %}
+
+
 
 	<header class="intro-header" style="background-image: url('{{imgurl}}')">
 		<div class="container">

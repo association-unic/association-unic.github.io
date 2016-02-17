@@ -77,3 +77,13 @@ section h3.section-subheading {
 .footer-col h3, .footer-col p {
 	margin-bottom: 30px;
 }
+
+#credit {
+	color: transparent;
+	/*color: white;*/
+	position: absolute;
+	bottom: 5px;
+	font-size: 15px;
+	right: 5%;
+	margin: 0;
+}
