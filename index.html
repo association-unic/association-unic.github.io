@@ -96,7 +96,7 @@ layout: default
 		</div>
 
 		<div class="row">
-			{% for post in site.categories.sorties %}
+			{% for post in site.categories.sorties limit:3 %}
 			<div class="col-sm-4 portfolio-item">
 				<a href="{{post.url}}" class="portfolio-link">
 					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}thumb/default_thumb.png{% endif %}{% endcapture %}
@@ -109,6 +109,11 @@ layout: default
 			{% endfor %}
 		</div>
 
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<a href="/nos-sorties" class="bouton-cercle center-block">Voir plus</a>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -139,7 +144,6 @@ layout: default
 </section>
 
 
-<!-- a propos -->
 <section class="success" id="about">
 	<div class="container">
 		<div class="row">
