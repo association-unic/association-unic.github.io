@@ -3,22 +3,53 @@
 	height: 256px;
 }
 
+.bg-light-gray {
+	background-color: #f7f7f7;
+}
+
+.bg-light-green {
+	background-color: #63d7c0 ;
+}
+
 @media (min-width: 768px){
 	header .intro-text .name {
 	    font-size: 3.75em;
 	}
 }
 
-.portfolio-item .portfolio-caption {
+.intro-header-small {
+	margin-bottom: 100px;
+}
+
+.intro-header-small .container {
+	padding-top: 100px;
+	padding-bottom: 0;
+}
+
+.container-spaced {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.portfolio-caption {
 	max-width: 400px;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color: transparent;
 	text-align: center;
 	padding: 10px;
 	margin-bottom: 10px;
 }
 
-.portfolio-item .portfolio-caption p {
+.portfolio-caption.bg-light-green {
+	background-color: #63d7c0;
+}
+
+.portfolio-caption.bg-light-gray {
+	background-color: #f7f7f7;
+}
+
+
+.portfolio-caption p {
 	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-style: italic;
 	font-size: 16px;
@@ -32,33 +63,13 @@
 
 section h3.section-subheading {
 	font-size: 16px;
-	/*font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;*/
 	text-transform: none;
 	font-style: italic;
 	font-weight: 400;
 	margin-bottom: 75px;
 }
 
-.bg-light-gray {
-	background-color: #f7f7f7;
-}
 
-.bg-light-gray .portfolio-caption {
-	background-color: transparent;
-}
-
-.scroll-top .btn {
-	font-size: inherit;
-}
-
-
-#contactForm li {
-	list-style: none;
-}
-
-
-
-/*image de debut de page*/
 .intro-header {
 	background: no-repeat center center;
 	background-attachment: scroll;
@@ -74,16 +85,37 @@ section h3.section-subheading {
     height: 260px;
 }
 
+a.bouton-cercle {
+	color: #2c3e50;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    padding: 10px 22px;
+    margin: 30px auto 0;
+    transition: all 0.4s;
+    border-radius: 5px;
+    border: 1px solid #2c3e50;
+}
+
+a.bouton-cercle:hover {
+	color: #fff;
+	background-color: #2c3e50;
+}
+
 .footer-col h3, .footer-col p {
 	margin-bottom: 30px;
 }
 
+.scroll-top .btn {
+	font-size: inherit;
+}
+
+
 #credit {
-	color: transparent;
-	/*color: white;*/
+	color: #3a4a5a;
 	position: absolute;
 	bottom: 5px;
+	right: 10px;
 	font-size: 15px;
-	right: 5%;
 	margin: 0;
 }

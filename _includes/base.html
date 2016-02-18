@@ -1,3 +1,7 @@
+{% comment %}
+	for the filepaths to work even if the site isn't on the root of the server
+{% endcomment %}
+
 {% assign base = '' %}
 {% assign depth = page.url | split: '/' | size | minus: 1 %}
 {% if    depth == 1 %}{% assign base = '.' %}

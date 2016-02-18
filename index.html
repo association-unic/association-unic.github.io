@@ -2,6 +2,25 @@
 layout: default
 ---
 
+
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
+
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Ce site est en construction. Vous pouvez nous contacter sur <a href="mailto:association.unic@laposte.net">association.unic@laposte.net</a>, ce site sera disponible dans très peu de temps!</p>
+        <p>&mdash; L'équipe d'UNIC</p>
+    </div>
+</article>
+
+{% comment %}
 <header id="accueil">
 	<div class="container">
 		<div class="row">
@@ -96,7 +115,7 @@ layout: default
 		</div>
 
 		<div class="row">
-			{% for post in site.categories.sorties %}
+			{% for post in site.categories.sorties limit:3 %}
 			<div class="col-sm-4 portfolio-item">
 				<a href="{{post.url}}" class="portfolio-link">
 					{% capture imgurl %}{% if post.thumbnail %}{{post.thumbnail}}{% elsif post.imgtitle %}{{post.imgtitle}}{% else %}thumb/default_thumb.png{% endif %}{% endcapture %}
@@ -109,6 +128,11 @@ layout: default
 			{% endfor %}
 		</div>
 
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<a href="/nos-sorties" class="bouton-cercle center-block">Voir plus</a>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -139,7 +163,6 @@ layout: default
 </section>
 
 
-<!-- a propos -->
 <section class="success" id="about">
 	<div class="container">
 		<div class="row">
@@ -158,4 +181,4 @@ layout: default
 		</div>
 	</div>
 </section>
-
+{% endcomment %}
