@@ -12,7 +12,12 @@
 	<link href="{{base}}/assets/css/freelancer.css" rel="stylesheet">
 	<link href="{{base}}/assets/css/animsition.css" rel="stylesheet" >
 	<link href="{{base}}/assets/css/style.css" rel="stylesheet">
-	<link href="{{base}}/assets/css/timetable.css" rel="stylesheet">
+	
+	{% for css_name in page.extra_css %}
+		<link href="{{base}}/assets/css/post.css" rel="stylesheet">
+		<link href="{{base}}/assets/css/{{ css_name }}" rel="stylesheet">
+	{% endfor %}
+
 
 	<link href="{{base}}/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
