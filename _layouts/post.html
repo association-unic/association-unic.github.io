@@ -2,7 +2,9 @@
 layout: default
 extra_css:
   - post.css
+
 ---
+
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
 	{% if page.imgtitle %}
@@ -20,8 +22,6 @@ extra_css:
 	{% unless file_exists %}
 		{% assign imgurl = {{base}}|append:'/assets/img/default-imgtitle.jpg' %}
 	{% endunless %}
-
-
 
 	<header class="intro-header" style="background-image: url('{{imgurl}}')">
 		<div class="container">
